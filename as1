@@ -12,10 +12,44 @@ class HealthProfessional {
         this.description = description;
     }
 
-    // 详情;
+    
     public void printDetails() {
         System.out.println("ID: " + id);
         System.out.println("Name: " + name);
         System.out.println("Description: " + description);
+    }
+}
+
+class GeneralPractitioner extends HealthProfessional {
+    public GeneralPractitioner() {
+    }
+
+    public GeneralPractitioner(int id, String name, String description) {
+        super(id, name, description);
+    }
+
+    @Override
+    public void printDetails() {
+        super.printDetails();
+        System.out.println("Specialty: HealthProfessional");
+    }
+}
+
+class Surgeon extends HealthProfessional {
+
+    final String specialty = "Surgeon";
+
+    public Surgeon() {
+
+    }
+
+    public Surgeon(int id, String name, String description) {
+        super(id, name, description);
+    }
+
+    @Override
+    public void printDetails() {
+        super.printDetails();
+        System.out.println("Specialty: " + this.specialty);
     }
 }
