@@ -53,3 +53,31 @@ class Surgeon extends HealthProfessional {
         System.out.println("Specialty: " + this.specialty);
     }
 }
+
+class Appointment {
+
+    String name;
+    String phone;
+    String time;
+    HealthProfessional doctor;
+
+    public Appointment() {
+
+    }
+
+    public Appointment(String name, String phone, String time, HealthProfessional doctor) {
+        this.name = name;
+        this.phone = phone;
+        this.time = time;
+        this.doctor = doctor;
+    }
+
+    public void printDetails() {
+        System.out.println("Patient Name: " + name);
+        System.out.println("Patient Phone: " + phone);
+        System.out.println("Time: " + time);
+        System.out.print("Doctor: ");
+        doctor.printDetails();
+    }
+}
+
